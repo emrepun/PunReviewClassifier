@@ -42,4 +42,4 @@ for index, row in positive_reviews_df.iterrows():
         df = df.append({'review': row["Positive_Review"], 'is_positive': 1}, ignore_index=True)
 
 #save the cleaned data as reviews.csv
-endResult = df.to_csv('reviews.csv')
+endResult = df.to_csv('reviews.csv',index=False)
