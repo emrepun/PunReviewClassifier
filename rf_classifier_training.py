@@ -23,3 +23,11 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 print('Score: ', model.score(X_test, y_test))
+
+words = cv.vocabulary_
+words_for_json = {}
+for k, v in words.items():
+    words_for_json[k] = int(v)
+pickle.dump(model, open('reviewClassifier.pkl','wb'))
+with open('word_feature_space.json', 'w') as fp:
+    json.dump(words_for_json, fp)
